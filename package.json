@@ -1,0 +1,28 @@
+{
+  "name": "apartment-server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon server/app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Andrey1914/apartment-server.git"
+  },
+  "author": "Andrey Kurka",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Andrey1914/apartment-server/issues"
+  },
+  "homepage": "https://github.com/Andrey1914/apartment-server#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "express-graphql": "^0.12.0",
+    "graphql": "^16.6.0",
+    "mongoose": "^7.1.0",
+    "nodemon": "^2.0.22"
+  }
+}
