@@ -1,11 +1,17 @@
 const graphql = require("graphql");
 
-const { GraphQLObjectType, GraphQLString, GraphQLInt, GraphQLSchema } = graphql;
+const {
+  GraphQLObjectType,
+  GraphQLString,
+  GraphQLInt,
+  GraphQLSchema,
+  GraphQLID,
+} = graphql;
 
 const ApartmentType = new GraphQLObjectType({
   name: "Apartment",
   fields: () => ({
-    id: { type: GraphQLString },
+    id: { type: GraphQLID },
     title: { type: GraphQLString },
     description: { type: GraphQLString },
     rating: { type: GraphQLInt },
@@ -46,8 +52,10 @@ const Query = new GraphQLObjectType({
   fields: () => ({
     apartment: {
       type: ApartmentType,
-      args: { id: { type: GraphQLString } },
-      resolve(parent, args) {},
+      args: { id: { type: GraphQLID } },
+      resolve(parent, args) {
+        return apartments.find((apartment) => apartment.id === args.id);
+      },
     },
   }),
 });
