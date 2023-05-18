@@ -9,12 +9,9 @@ require("dotenv").config({
 });
 
 const app = express();
-const { PORT } = process.env;
+const { PORT, MONGO_DB } = process.env;
 
-mongoose.connect(
-  "mongodb+srv://Andrei:jw1914@cluster0.j4ipo8l.mongodb.net/db-apartments",
-  { useNewUrlParser: true }
-);
+mongoose.connect(MONGO_DB, { useNewUrlParser: true });
 
 app.use(cors());
 
